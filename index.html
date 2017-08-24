@@ -1,0 +1,940 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Xuxoxool</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="img/logo.png" />
+<link rel="stylesheet" href="fonts/Font-Awesome/font-awesome.min.css">
+<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="js/mobile/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/extension.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="vendors/malihu/jquery.mCustomScrollbar.min.css">
+</head>
+
+<body class="loading oswald">
+
+	<span class="frame black top-left-hori"></span>
+	<span class="frame black top-left-vert"></span>
+	<span class="frame black top-right-hori"></span>
+	<span class="frame black top-right-vert"></span>
+	<span class="frame black bottom-left-hori"></span>
+	<span class="frame black bottom-left-vert"></span>
+	<span class="frame black bottom-right-hori"></span>
+	<span class="frame black bottom-right-vert"></span>
+	<span id="scroller" class="black"></span>
+	<a id="main_logo" href="javascript:void(0);" onclick="return toggleNav();">
+		<img src="img/logo.png" />
+		<div id="hamburger"><span></span><span></span><span></span></div>
+	</a>
+	<div id="main_nav">
+		<div id="main_nav_wrapper">
+			<ul id="main_nav_menu">
+				<li><a href="javascript:void(0);" onclick="return jumpTo('intro');">Home</a></li>
+				<li><a href="javascript:void(0);" onclick="return jumpTo('work');">Work</a></li>
+				<li><a href="javascript:void(0);" onclick="return jumpTo('profile');">Profile</a></li>
+				<li><a href="javascript:void(0);" onclick="return jumpTo('contact');">Contact</a></li>
+			</ul>
+			<div id="main_nav_separator"></div>
+			<ul id="main_nav_contact">
+				<h1>Have a project for me? Let's discuss!</h1>
+				<h3>Or just want to say hi?</h3>
+				<li>zulzolkaffly@gmail.com</li>
+				<li>+60194767618</li>
+				<li><i class="fa fa-facebook"></i>&nbsp;&nbsp;zulzolkaffly</li>
+				<li><i class="fa fa-instagram"></i>&nbsp;&nbsp;zulzolkaffly</li>
+				<li><i class="fa fa-github"></i>&nbsp;&nbsp;https://github.com/xuxoxool</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- INTRO -->	
+	<div class="section" id="intro">
+		<div id="intro_wrapper">
+			<div id="intro_tagline">
+				<span>ROOKIE<br />DESIGNER</span>
+				<span>EXPERIENCED<br />PROGRAMMER</span>
+				<span>COOL FATHER</span>
+			</div>
+			<div id="intro_arrows">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40">
+				<polyline id="arrow1" points="35,5 		20,15	 5,5 "/>
+				<polyline id="arrow2" points="35,15 	20,25	 5,15 "/>
+				<polyline id="arrow3" points="35,25 	20,35	 5,25 "/>
+				</svg>
+				<span>Scroll</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- GRID -->
+	<div id="work">
+		<div class="cell">
+			<div class="cell-item start"></div>
+			
+			<!-- XUXO -->
+			<div class="cell-item work" style="background-image: url(img/work/xuxo/thumb.jpg);">
+				<div class="work-content">
+					<h3>XUXO</h3>
+					<span>PHP MVC Framework</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('xuxo','Xuxo PHP MVC Framework');">View</a>
+				</div>
+			</div>
+			
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+		
+			<!-- EMPAYAR TANI -->
+			<div class="cell-item work" style="background-image: url(img/work/empayartani/thumb.jpg);">
+				<div class="work-content">
+					<h3>Empayar Tani</h3>
+					<span>Website and CMS</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('empayartani', 'Empayar Tani - Website and Custom CMS');">View</a>
+				</div>
+			</div>
+			
+			<!-- 100MENAMARILLO -->
+			<div class="cell-item work" style="background-image: url(img/work/100menamarillo/thumb.jpg);">
+				<div class="work-content">
+					<h3>100MENAMARILLO</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('100menamarillo', '100MenAmarillo - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+			
+			<!-- CITRUSRICUS -->
+			<div class="cell-item work" style="background-image: url(img/work/citrusricus/thumb.jpg);">
+				<div class="work-content">
+					<h3>Citrusricus</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('citrusricus', 'Citrusricus - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+				
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+			
+			<!-- SAUJANA GEMILANG -->
+			<div class="cell-item work" style="background-image: url(img/work/sgtms/thumb.jpg);">
+				<div class="work-content">
+					<h3>Saujana Gemilang Travel and Tour</h3>
+					<span>Website and CMS (Dead)</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('sgtms', 'Saujana Gemilang Tour Management System - Website, Web System, Custom CMS');">View</a>
+				</div>
+			</div>
+			
+			<!-- REECE ARCON -->
+			<div class="cell-item work" style="background-image: url(img/work/arcon/thumb.jpg);">
+				<div class="work-content">
+					<h3>Reece Arcon</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('arcon', 'Reec Arcon - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+		
+			<!-- DIGFO -->
+			<div class="cell-item work" style="background-image: url(img/work/digfo/thumb.jpg);">
+				<div class="work-content">
+					<h3>DIGFO</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('digfo', 'DIGFO - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+				
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+			
+			<!-- IUKL LMS -->
+			<div class="cell-item work" style="background-image: url(img/work/iukllms/thumb.jpg);">
+				<div class="work-content">
+					<h3>IUKL LMS</h3>
+					<span>Web System</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('iukllms', 'IUKL Learning Management System - Web System');">View</a>
+				</div>
+			</div>
+		
+			<!-- SHIRLEY -->
+			<div class="cell-item work" style="background-image: url(img/work/shirley/thumb.jpg);">
+				<div class="work-content">
+					<h3>Party Creations By Shirley</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('shirley', 'Party Creations by Shirley - Freelancer Contest Winner');">View</a>
+				</div>
+			</div>
+		
+			<!-- LANE -->
+			<div class="cell-item work" style="background-image: url(img/work/lane/thumb.jpg);">
+				<div class="work-content">
+					<h3>LANE'S CAFE</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('lane', 'Lane&quote;s Cafe - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+				
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+			
+			<!-- SALIHIN -->
+			<div class="cell-item work" style="background-image: url(img/work/salihin/thumb.jpg);">
+				<div class="work-content">
+					<h3>Salihin Consulting Group</h3>
+					<span>Website and CMS</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('salihin', 'Salihin Consulting Group - Website, Web System and Custom CMS');">View</a>
+				</div>
+			</div>	
+		
+			<!-- EITC -->
+			<div class="cell-item work" style="background-image: url(img/work/eitc/thumb.jpg);">
+				<div class="work-content">
+					<h3>Eye In The Corner</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('eitc', 'Eye in the Corner - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+			
+			<!-- TRIPDONGLE -->
+			<div class="cell-item work" style="background-image: url(img/work/tripdongle/thumb.jpg);">
+				<div class="work-content">
+					<h3>TripDongle IOS App</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('tripdongle', 'Trip Dongle - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+			
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+			
+			<!-- EVOTING -->
+			<div class="cell-item work" style="background-image: url(img/work/spsevoting/thumb.jpg);">
+				<div class="work-content">
+					<h3>SPS E-Voting</h3>
+					<span>Website and Web System</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('spsevoting', 'SPS E-Voting - Website and Web System');">View</a>
+				</div>
+			</div>
+			
+			<!-- LEXPER -->
+			<div class="cell-item work" style="background-image: url(img/work/lexper/thumb.jpg);">
+				<div class="work-content">
+					<h3>Lexper API</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('lexper', 'Lexper API - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+			
+			<!-- SCRAPPC -->
+			<div class="cell-item work" style="background-image: url(img/work/scrappc/thumb.jpg);">
+				<div class="work-content">
+					<h3>Scrap Processing Company</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('scrappc', 'Scrap Production Company - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+			
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+			
+			<!-- AUDIT SCOREBOARD -->
+			<div class="cell-item work" style="background-image: url(img/work/ausb/thumb.jpg);">
+				<div class="work-content">
+					<h3>Audit Scoreboard</h3>
+					<span>Web System</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('ausb', 'Audit Scoreboard - Web System');">View</a>
+				</div>
+			</div>
+		
+			<!-- SOLAR -->
+			<div class="cell-item work" style="background-image: url(img/work/solar/thumb.jpg);">
+				<div class="work-content">
+					<h3>Solar Panel Company</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('solar', 'Solar Company - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>		
+		
+			<!-- STARWINGS -->
+			<div class="cell-item work" style="background-image: url(img/work/starwings/thumb.jpg);">
+				<div class="work-content">
+					<h3>Starwings Company</h3>
+					<span>MailChimp Template</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('starwings', 'Starwings - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>
+			
+			<div class="cell-item end"></div>
+		</div>
+		
+		<div class="cell">
+			<div class="cell-item start"></div>
+		
+			<!-- NOAH -->
+			<div class="cell-item work" style="background-image: url(img/work/noah/thumb.jpg);">
+				<div class="work-content">
+					<h3>Noah Transport</h3>
+					<span>Web Design and Booking System</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('noah', 'Noah Transport - Website and Web System');">View</a>
+				</div>
+			</div>
+			
+			<!-- SWIFT -->
+			<div class="cell-item work" style="background-image: url(img/work/swift/thumb.jpg);">
+				<div class="work-content">
+					<h3>Swift Company</h3>
+					<span>Web Design</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('swift', 'Swift Company - Freelancer Contest Entry');">View</a>
+				</div>
+			</div>	
+		
+			<!-- VETERINAR -->
+			<div class="cell-item work" style="background-image: url(img/work/vet/thumb.jpg);">
+				<div class="work-content">
+					<h3>Jabatan Veterinar</h3>
+					<span>Web Interactive Presentation</span>
+					<a class="btn btn-danger btn-sm" href="javascript:void(0);" onclick="return viewWork('vet', 'Jabatan Veterinar - Web Interactive Presentation');">View</a>
+				</div>
+			</div>
+			
+			<div class="cell-item end"></div>
+		</div>
+	</div>
+	
+	<!-- PROFILE -->
+	<div id="profile">
+		<div id="profile_wrapper">
+			<div id="profile_front">
+				<a class="profile-nav-left" href="javascript:void(0);" onclick="return turnProfileTo('left');"><span>Skills and Proficiencies</span></a>
+				<div class="profile-content">
+					<h1>Hello There</h1>
+					<p style="text-align: center; padding: 4px 12px; margin-bottom: 12px;">I am Zul Zolkaffly from Malaysia, a web designer and programmer.</p>
+					
+					<p style="text-align: center; padding: 4px 12px; margin-bottom: 12px;">
+						I have <span id="totalYears"></span> years of experience in various fields (<span id="careerYears"></span> Years professional, 3 years during college). 
+						I started off my career as an Engineer, then I submitted to my passion of being a web programmer and designer.
+						Even though I came from an engineering background, I've always have a passion in programming. I spent my free time during college learning how to
+						code, and this habit of mine stays with me until today. I usually got involved in developing web system, but nowadays I spent a lot of time doing
+						front end development.
+					</p>
+					
+					<p style="text-align: center; padding: 4px 12px; margin-bottom: 12px;">
+						I received a Bachelor's Degree in Electrical Engineering, concentration of Robotics, Signal and System from Vanderbilt University, USA. After graduating in 2010, I was offered the position
+						as Manufacturing Engineer at Portescap. After Portescap closed down at the end of 2012, I received an offer as a QA/QC Engineer at Transnorm
+						Systems Sdn. Bhd. However, I was not long there because I received and offer as a programmer at Infrastructure University Kuala Lumpur in
+						early 2013. After 3 years at IUKL, I continue my career as a Senior Programmer at Salihin Consulting Group starting August of 2016.
+					</p>
+					
+					<p style="text-align: center;">
+						If you are interested in hiring me for a permanent job or a freelance project, please do contact me at zulzolkaffly@gmail.com or by phone at
+						(+60)194767618.
+					</p>
+					
+					
+					<div id="skill">
+						<h3>Skills Summary</h3>
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">PHP</div>
+								<div class="skill-chart bar-hori width-9" data-value="9"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">HTML</div>
+								<div class="skill-chart bar-hori width-9" data-value="9"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">jQuery</div>
+								<div class="skill-chart bar-hori width-8" data-value="8"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">javascript</div>
+								<div class="skill-chart bar-hori width-6" data-value="6"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">CSS</div>
+								<div class="skill-chart bar-hori width-8" data-value="8"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">SASS/LESS</div>
+								<div class="skill-chart bar-hori width-3" data-value="3"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">Bootstrap</div>
+								<div class="skill-chart bar-hori width-8" data-value="8"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">Oracle</div>
+								<div class="skill-chart bar-hori width-6" data-value="6"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">C#</div>
+								<div class="skill-chart bar-hori width-6" data-value="6"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">.Net</div>
+								<div class="skill-chart bar-hori width-6" data-value="6"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">JSP</div>
+								<div class="skill-chart bar-hori width-6" data-value="6"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">Code Igniter</div>
+								<div class="skill-chart bar-hori width-8" data-value="8"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">Zend</div>
+								<div class="skill-chart bar-hori width-5" data-value="5"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">Laravel</div>
+								<div class="skill-chart bar-hori width-3" data-value="3"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">React.js</div>
+								<div class="skill-chart bar-hori width-2" data-value="2"></div>
+							</div>
+						</div>
+						
+						<div class="skill-item">
+							<div class="skill-wrapper">
+								<div class="skill-name">Angular.js</div>
+								<div class="skill-chart bar-hori width-2" data-value="2"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="profile-nav-right" href="javascript:void(0);" onclick="return turnProfileTo('right');"><span>Work Experience</span></a>
+			</div>
+			
+			<div id="profile_right">
+				<a class="profile-nav-left" href="javascript:void(0);" onclick="return turnProfileTo('front');"><span>Hello There</span></a>
+				<div class="profile-content">
+					<h1>Work Experience</h1>
+					<ol>
+						<!-- SALIHIN -->
+						<li>
+							<h3>August 2016 - Present</h3>
+							<h4>Position: Senior Programmer</h4>
+							<h5>Salihin Consulting Group, Batu Caves, Selangor</h5>
+							
+							<ul>
+								<strong>Key Responsibilities</strong>
+								<li>Developed and maintained Audit Scoreboard System, a system for audit
+							scoring and tracking (PHP, MySQL, jQuery, Bootstrap 3, Code Igniter)</li>
+								<li>Developed and maintained SPS Web Pro, a Content Management
+							System for website development (PHP, MySQL, jQuery, Bootstrap 3,
+							Code Igniter)</li>
+								<li>Developed SPS E-Voting, a cloud-based, secured online voting system. (PHP, MySQL, jQuery, Bootstrap 3, Code Igniter).</li>
+							</ul>
+							
+							<ul>
+								<strong>Achievements.</strong>
+								<li>Successfully developed and adapted the usage of Audit Scoreboard System during audit team project</li>
+								<li>Successfully upgraded SALIHIN Website using SPS Web Pro.</li>
+								<li>Successfully developed the whole module in SPS E-Voting</li>
+							</ul>
+							
+							<ul>
+								<strong>Activities</strong>
+								<li>SALIHIN Kenyir Trip
+									<ul>
+										<li>Became leader for Team 6</li>
+										<li>Won a station task in SALIHIN Challenge</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					
+						<!-- IUKL -->
+						<li>
+							<h3>February 2013 - July 2016</h3>
+							<h4>Position: Programmer (2013 - 2015), Senior Programmer (2015 - 2016)</h4>
+							<h5>Infrastructure University Kuala Lumpur (IUKL), Ikram Education Sdn. Bhd., Kajang, Selangor</h5>
+							
+							<ul>
+								<strong>Key Responsibilities</strong>
+								<li>Become team leader for the System Development Division</li>
+								<li>Developed and maintained Education Management System (EMS), a system to register students, manage students' academic and financial records
+										(ORACLE form, report and PL/SQL)</li>
+								<li>Developed and maintained Learning Management System (LMS), a student and staff portal (PHP, Javascript, JQUERY, MySQL, ORACLE).</li>
+								<li>Developed and maintained Timetable System (TTS), a web system to setup and manage class timetable every semester (JSP, JQUERY, ORACLE).</li>
+								<li>Developed and Maintained Education Management System for IUKL Branches (EMSBRC) to register students and manage students' academic
+										record (ORACLE form, report and PL/SQL).</li>
+								<li>Developed and maintained various systems used throughout the university (PHP, Javascript, JQUERY, MySQL, ORACLE).</li>
+								<li>Lead the team in troubleshooting and solve errors and issues in systems.</li>
+								<li>Prepared systems technical documentation and user manuals.</li>
+								<li>Conducted training to users on system usage and functionalities.</li>
+								<li>Responsible as database administrator to manage all students and staff records in the university.</li>
+								<li>Responsible in preparing data required by Registrar, University Management and Ministry of Higher Education.</li>
+								<li>Assist Technical Division Team in setting up events requiring PC and IT hardware.</li>
+								<li>Participated actively in maintaining office's ISO documentation.</li>
+							</ul>
+							
+							<ul>
+								<strong>Achievements</strong>
+								<li>Improve EMS by reducing numbers of frequent errors from 1 per week to 1 per 2 months.</li>
+								<li>Prepare error handler and repairer to avoid reoccurring data discrepancies.</li>
+								<li>Update most screens, forms, reports and PL/SQL procedures to reduce errors and issues.</li>
+								<li>
+									Restructure LMS Student and Staff Portal to include new modules:
+									<ul>
+										<li>Interaction Modules for Lecturers to post announcements, notes and assignments to students.</li>
+										<li>Online Course Registration for students to register subjects online via Student Portal</li>
+										<li>Online Payment for students to make online payment for tuition fees and other type of payments.</li>
+										<li>Academic Reports for students to view their academic records.</li>
+										<li>Attendance Management for Lecturers to update their students' attendance record.</li>
+										<li>Surveys Module for staff to publish survey for management purposes.</li>
+									</ul>
+								</li>
+								<li>Restructure Timetable System to cater for Mass Lectures class mode.</li>
+								<li>Enhance System to cater for GST implementation.</li>
+							</ul>
+							
+							<ul>
+								<strong>Activities</strong>
+								<li>Internal Audit 2013 - 2015</li>
+								<li>Update and maintain ISO Documents (Procedure &amp; Quality Manuals)</li>
+								<li>Control document distribution to respective personnel Registration and Induction Week</li>
+								<li>Assist Technical Team to prepare for Registration Day.</li>
+								<li>Gave briefing to New Students on how to use Student Portal.</li>
+							</ul>
+					
+						</li>
+						
+						<!-- TRANSNORM -->
+						<li>
+							<h3>November 2012 - February 2013</h3>
+							<h4>Position: QA/QC Engineer</h4>
+							<h5>Transnorm Systems Sdn. Bhd., Kluang, Johor</h5>
+							
+							<ul>
+								<strong>Key Responsibilities</strong>
+								<li>Become the Head of Quality Department</li>
+								<li>Maintain and Implement Quality Strategies and Management Systems.</li>
+								<li>Responsible for materials and products quality assurance and compliance in order to meet customer's satisfaction.</li>
+								<li>Keep and maintain quality inspection records.</li>
+								<li>Involve in any quality improvement, countermeasures or corrective and preventive actions.</li>
+								<li>Act as the authorized personnel to approve parts incoming, in-process and outgoing flow..</li>
+								<li>Responsible to maintain measurement equipment calibration status</li>
+								<li>Become the document controller for quality management records and ISO documents.</li>
+							</ul>
+							
+							<ul>
+								<strong>Achievements</strong>
+								<li>Maintained Quality Issues by 1 issue per month</li>
+								<li>Improved processing time for incoming parts inspection from maximum of 1 day per delivery to 3 hours per delivery.</li>
+								<li>Restructured incoming parts inspection process to be more organized.</li>
+								<li>Improved documentation and maintenance of quality records.</li>
+							</ul>
+							
+							<ul>
+								<strong>Activities</strong>
+								<li>Internal Audit 2012 - Document Controller.</li>
+								<li>Update and maintain ISO Documents (Procedure &amp; Quality Manuals).</li>
+								<li>Control document distribution to respective personnel.</li>
+							</ul>
+						</li>
+						
+						<!-- PORTESCAP -->
+						<li>
+							<h3>August 2010 - August 2012</h3>
+							<h4>Position: Manufacturing Engineer</h4>
+							<h5>Portescap (M) Sdn. Bhd., Kluang, Johor</h5>
+							
+							<ul>
+								<strong>Key Responsibilities</strong>
+								<li>Monitor quality and productivity of production lines.</li>
+								<li>Become the process owner who is responsible for respective lines' process flow and standard operating procedures.</li>
+								<li>Daily involvement in product failure analysis and countermeasures.</li>
+								<li>Design, prepare and maintain tool and equipment for use in production lines.</li>
+								<li>Conduct and lead improvement investigation on respective production lines to improve line quality, productivity and delivery.</li>
+								<li>Improve manufacturing efficiency by planning work flow, layout and equipment setup.</li>
+								<li>Involve in new product development and existing product improvement experimentation.</li>
+							</ul>
+							
+							<ul>
+								<strong>Achievements</strong>
+								<li>
+									<i>Reduced IDPM (Internal Defect Per Million) from 15% to 3.2%</i>
+									<ul>
+										<li>Improved First Pass Yield of Linear Motor line from 70% to 98% through process improvement analysis.</li>
+										<li>Successfully reduced average scrap quantity of Linear Motor line from 80% to 20% by restructuring process.</li>
+										<li>Effectively decreased Pulley Height and Run Out rejection rate from 75% to 2% via fabrication of improved fixtures.</li>
+										<li>Delivered 99% yield with zero workmanship issue in Encoder Assembly through fabrication of poka-yoke fixtures.</li>
+										<li>Revised inspection method to decrease workmanship issue from 40% to 0% by implementing new process and equipments.</li>
+									</ul>
+								</li>
+								<li>
+									<i>Increased Productivity from 10 Parts/People/Hour (PPH) to 18.6 PPH</i>
+									<ul>
+										<li>Effectively increased Gearbox Line productivity from 3.5 PPH to 4.0 PPH by conducting Standard Work Kaizen.</li>
+										<li>Successfully amplified DMM 8 line productivity from 1.30 PPH to 1.77 PPH through layout restructuring and Standard Work Kaizen.</li>
+										<li>Improved Linear Motor line productivity from 0.75 PPH to 1.25 PPH via process improvement and revision.</li>
+									</ul>
+								</li>
+								<li>Reduced EDPM (External Defect Per Million) from 20K to 10K EDPM.</li>
+								<li>Improved OTD (On Time Delivery) from 68% to 90%.</li>
+								<li>Improved Shipments Past Due from USD 323K to USD 141K.</li>
+								<li>Successfully reduced average playbook design time from 5 hours to 1 hour by creating the Automated Standard Work program.</li>
+								<li>Effectively simplified Skill Matrix documentation process from average of 8 hours to 2 hours via Automated Skill Matrix program with database.</li>
+								<li>Reduced Sample Kit Request (SKR) average form filling time from 30 minutes to 2 minutes by creating Automated SKR Master program.</li>
+							</ul>
+
+							<ul>
+								<strong>Activities</strong>
+								<li>
+									<ul>
+										<i>Kaizen Activities</i>
+										<li>Standard Work Kaizen - acted as Leader and Member</li>
+										<li>Variance Reduction Kaizen - acted as Leader and Member</li>
+										<li>Single Minute Exchange of Dies - Acted as Leader</li>
+										<li>Failure Mode Effect Analysis - Acted as Member</li>
+									</ul>
+								</li>
+								<li>
+									<ul>
+										<i>Skill and Training Activities</i>
+										<li>Pro-E Intermediate 3D Drawing</li>
+										<li>Effective Negotiation Skill</li>
+										<li>Hazard in Workplace</li>
+									</ul>
+								</li>
+								<li>
+									<ul>
+										<i>Social Activities</i>
+										<li>Committee member in Portescap Malaysia Annual Dinner 2010 - Committee of Performance</li>
+										<li>Committee member in Portescap Farewell Dinner - Committee of Media</li>
+									</ul>
+								</li>
+								<li>
+									<ul>
+										<i>Product Line Transfer</i>
+										<li>Trained Portescap India Manufacturing Engineers regarding process, quality issues and basic design concept of products</li>
+										<li>Assisted in setting up line layout in Portescap India</li>
+										<li>Trained Portescap India operators regarding process and monitored their performance with output quality and quantity</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+
+						<!-- FREELANCE -->
+						<li>
+							<h3>2007 - Present</h3>
+							<h4>Freelance Programming Jobs</h4>
+							
+							<ul class="full">
+								<li><strong>2007 - 2008</strong> - Developed Website for Malaysia Student Association of Vanderbilt University (PHP, CSS, Javascript, JQUERY, MySQL).</li>
+								<li><strong>2009</strong> - Developed Website for SMK Dato Penggawa Barat unofficial Alumni Association (PHP, CSS, Javascript, JQUERY, MySQL).</li>
+								<li><strong>2010</strong> - Developed Website for Biomedical Engineering Department of Vanderbilt University (ASPX, JQUERY, SQLite).</li>
+								<li><strong>2012</strong> - Developed Interactive Countdown Timer for Portescap (M) Sdn. Bhd. to count down their closing date (C# and SQLite).</li>
+								<li><strong>2013</strong> - Developed Interactive Web Presentation for Jabatan Perkhidmatan
+																						Veterinar, Kementerian Pertanian dan Industri Asas Tani (PHP, CSS, Javascript, JQUERY, SQLite).</li>
+								<li><strong>2014</strong> - Assists Infotree Sdn. Bhd. in preparing a sample system for Jabatan
+																						Keselamatan and Kesihatan Pekerjaan (ASP.net, MsSQL).</li>
+								<li>
+									<strong>2015</strong>
+									<ul>
+										<li>Developed Website for Saujana Gemilang Travel &amp; Tours Sdn. Bhd.</li>
+										<li>Developed PHP MVC Framework (Xuxo Framework).</li>
+										<li>Developed JQuery Xlightbox plugin.</li>
+										<li>Developed Bootstrap CSS extension.</li>
+									</ul>
+								</li>
+								<li>
+									<strong>2016 - Present</strong>
+									<ul>
+										<li>Developed Website and Content Management System for Empayar Tani Resources. (PHP, CSS, Javascript, JQUERY, MySQL)</li>
+										<li>Improved Xuxo MVC Framework.</li>
+										<li>Improved Bootstrap CSS Extension.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</div>
+				<a class="profile-nav-right" href="javascript:void(0);" onclick="return turnProfileTo('back');"><span>Academic Background</span></a>
+			</div>
+					
+			<div id="profile_back">
+				<a class="profile-nav-left" href="javascript:void(0);" onclick="return turnProfileTo('right');"><span>Work Experience</span></a>
+				<div class="profile-content">
+					<h1>Academic Background</h1>
+					<ol>
+						<!-- VANDERBILT -->
+						<li>
+							<h3>May 2006 - May 2010</h3>
+							<h4>Vanderbilt University, USA</h4>
+							<h5>Bachelor of Engineering, Electrical Engineering, May 2010 [Concentration: Robotics, Signals and Communications]</h5>
+							
+							<ul>
+								<strong>Design Project and Experience</strong>
+								<li>Designed Modular Retractor for Hips Surgery, 2009 - 2010.</li>
+								<li>Collaborated with St. Thomas Hospital, Nashville, Tennessee USA to construct a working modular surgical retractor.</li>
+								<li>Designed the structure of the product.</li>
+								<li>Achieved prototype completion.</li>
+								<li>Programmed website for Biomedical Engineering Department Senior Design Project, 2009 - 2010.</li>
+								<li>Programmed website for Malaysian Student Association at Vanderbilt, 2008 - 2009.</li>
+							</ul>
+							
+							<ul>
+								<strong>Activities</strong>
+								<li>Choreographed Malaysian Dance and Japanese Dance, 2008 - 2010.</li>
+								<li>Engaged in Japanese Hall in McTyeire International Hall, 2007 - 2008.</li>
+								<li>Taught elementary school students basic science in Vanderbilt Student.</li>
+								<li>Volunteer for Science program, 2008.</li>
+								<li>Participated in a Summer Pre-academic Vanderbilt Engineering, PAVE session for engineering at Vanderbilt University, 2006.</li>
+							</ul>
+							
+							<ul>
+								<strong>Association</strong>
+								<li>Order of Engineer, 2010 - Present.</li>
+								<li>Malaysian Student Association at Vanderbilt University Bureau of Media, 2008 - 2009.</li>
+							</ul>
+									
+						</li>
+						
+						<!-- SMKDPB -->
+						<li>
+							<h3>Jan 2002 - Dec 2005</h3>
+							<h4>SMK Dato Penggawa Barat, Pontian, Johor</h4>
+							<h5>PMR (8A), SPM (9A1, 1A2)</h5>
+							
+							<ul>
+								<strong>Activities</strong>
+								<li>Kuiz Sejarah Peringkat Negeri, 2004 - 2005.</li>
+								<li>Jerayawara Sains, Peringkat Kebangsaan, 2004 - 2005.</li>
+								<li>Pertandingan Deklamasi Sajak, Peringkat Kebangsaan, 2004 - 2005.</li>
+							</ul>
+							
+							<ul>
+								<strong>Association</strong>
+								<li>Kelab Bahasa Melayu, President, 2004 - 2005.</li>
+								<li>Kelab Badminton, AJK, 2004.</li>
+								<li>Kadet Remaja Sekolah, AJK, 2005</li>
+								<li>Kelab Sukan Laksamana, Marching Commander and Instructor, 2004 - 2005</li>
+							</ul>
+						</li>
+					
+					</ol>
+				</div>
+				<a class="profile-nav-right" href="javascript:void(0);" onclick="return turnProfileTo('left');"><span>Skills and Proficiencies</span></a>
+			</div>
+			
+			<div id="profile_left">
+				<a class="profile-nav-left" href="javascript:void(0);" onclick="return turnProfileTo('back');"><span>Academic Background</span></a>
+				<div class="profile-content">
+					<h1>Skills and Proficiencies</h1>
+					<ol>
+						<li>
+							<strong>Programming Skills</strong>
+							<ul>
+								<li>
+									Excellent in PHP, Javascript, JQUERY, CSS, XML, HTML, MySQL:
+									<ul>
+										<li>Developed own PHP MVC Framework</li>
+										<li>Developed own JQUERY plugin</li>
+										<li>Developed Web Sites with PHP and MySQL in MVC Architechture</li>
+										<li>Developed Web Systems for data entry and processing in PHP, MYSQL and ORACLE</li>
+									</ul>
+								</li>
+								
+								<li>
+									Fluent in ORACLE Database, Form, Report and PL/SQL:
+									<ul>
+										<li>
+											Developed and Maintained system using ORACLE form and report:
+											<ul>
+												<li>Developed ORACLE integrated websites and systems in PHP</li>
+												<li>Developed and maintained ORACLE PL/SQL used in ORACLE integrated systems</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								
+								<li>
+									Proficient in Java and Visual Basic (VB.Net) Programming with SQL:
+									<ul>
+										<li>Developed Automated Standard Work Document with VB.Net</li>
+										<li>Developed Washer Measurement System with VB.Net</li>
+										<li>Developed Sample Kit Request Program with VB.Net</li>
+										<li>Developed SQL Database Integrated Countdown Program in VB.Net</li>
+										<li>Developed Countdown Program for Android Application</li>
+									</ul>
+								</li>
+								
+								<li>
+									Skilled in C# and ASP.Net Programming with SQL:
+									<ul>
+										<li>Developed Web Site with ASP.Net and SQL in MVC Architechture</li>
+										<li>Developed SQL Database Integrated Countdown Program in C#</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<strong>Computer Skills</strong>
+							<ul>
+								<li>Eficient in ORACLE form and report builder</li>
+								<li>Efficient in Microsoft Visual Studio, Eclipse, Adobe Dreamweaver.</li>
+								<li>Intermediate in word processing, spreadsheets, data entry and statistics.</li>
+								<li>Intermediate in graphical design with Adobe Photoshop, Adobe Illustrator and Paint.Net</li>
+							</ul>
+						</li>
+						
+						<li>
+							<strong>Other Skills</strong>
+							<ul>
+								<li>Fluent in spoken and written English, able to speak beginner Japanese.</li>
+								<li>Possess leadership quality and organization skill.</li>
+								<li>Artistic, innovative and creative.</li>
+								<li>Capable of working effectively in teams.</li>
+							</ul>
+						</li>
+					</ol>
+				</div>
+				<a class="profile-nav-right" href="javascript:void(0);" onclick="return turnProfileTo('front');"><span>Hello There</span></a>
+			</div>
+			
+			<!--
+			<div id="profile_top">
+				<div class="profile-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Donec gravida nec magna at accumsan.
+					Praesent lacinia, ipsum sed scelerisque sodales, libero mi elementum libero, porta viverra tellus lacus ut odio.
+					Fusce nisi est, bibendum ut tempor at, faucibus sit amet lectus.
+					Vestibulum sit amet lorem accumsan eros placerat vulputate quis quis velit.
+					Sed cursus placerat convallis. Morbi quis volutpat libero, at dignissim arcu.
+					Donec dictum purus eget posuere gravida.
+				</div>
+			</div>
+			
+			<div id="profile_bottom">
+				<div class="profile-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Donec gravida nec magna at accumsan.
+					Praesent lacinia, ipsum sed scelerisque sodales, libero mi elementum libero, porta viverra tellus lacus ut odio.
+					Fusce nisi est, bibendum ut tempor at, faucibus sit amet lectus.
+					Vestibulum sit amet lorem accumsan eros placerat vulputate quis quis velit.
+					Sed cursus placerat convallis. Morbi quis volutpat libero, at dignissim arcu.
+					Donec dictum purus eget posuere gravida.
+				</div>
+			</div>
+			-->
+		</div>
+		
+	</div>
+	
+	<!-- CONTACT -->
+	<div id="contact">
+		<div id="contact_wrapper">
+			<h1>Have a project for me? Let's discuss!</h1>
+			<h3>Or just want to say hi?</h3>
+			
+			<ul id="contact_info">
+				<li class="contact-info-item">zulzolkaffly@gmail.com</li>
+				<li class="contact-info-item">+60194767618</li>
+				<li class="contact-separator"></li>
+				<li class="contact-social-item">
+					<i class="fa fa-facebook"></i>&nbsp;&nbsp;zulzolkaffly
+				</li>
+				<li class="contact-social-item">
+					<i class="fa fa-instagram"></i>&nbsp;&nbsp;zulzolkaffly
+				</li>
+				<li class="contact-social-item">
+					<i class="fa fa-github"></i>&nbsp;&nbsp;https://github.com/xuxoxool
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- OVERLAY -->
+	<div class="overlay" id="overlay">
+		<div class="overlay-backdrop"></div>
+		
+		<div class="overlay-dialog">
+			<div class="overlay-header">
+				<div class="overlay-title">TITLE</div>
+				<div class="overlay-close"><span></span><span></span></div>
+			</div>
+			<div class="overlay-content">
+				CONTENT
+			</div>
+		</div>
+	</div>
+
+<div id="mobile_detect" class="hidden-sm hidden-xs"></div>
+<div id="height_detect" style="width:0; height:0;"></div>
+<script src="js/jquery-1.12.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/mobile/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/mobile/swipeupdown.js"></script>
+<script src="vendors/debounce/debounce.js"></script>
+<script src="vendors/mousewheel/jquery.mousewheel.min.js"></script>
+<script src="vendors/touch-punch/jquery.ui.touch-punch.min.js"></script>
+<script src="vendors/malihu/jquery.mCustomScrollbar.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
+
