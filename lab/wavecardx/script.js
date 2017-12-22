@@ -1,4 +1,10 @@
 
+// MAIN CLASS FUNCTION FOR WAVE CARD X
+// ACCEPT 4 ARGUMENTS:
+// 1) THE ELEMENT TO APPEND THE WAVE INTO
+// 2) THE COLOR OF THE 1ST WAVE
+// 3) THE COLOR OF THE 2ND WAVE
+// 4) THE COLOR OF THE 3RD WAVE
 var WaveCardX = function($e, c1, c2, c3) {
 	var self = this;
 	var colors = ['#00AAFF','#00AAFF','#00AAFF'];
@@ -40,6 +46,7 @@ var WaveCardX = function($e, c1, c2, c3) {
 	return init();
 };
 
+// EXTEND JQUERY FUNCTION TO EQUALIZE COLUMN HEIGHT ON EACH ROW
 $.fn.equalizeColHeight = function() {
 	return this.each(function() {
 		var $cols = $(this).find('[class*="col"]');
@@ -56,17 +63,18 @@ $.fn.equalizeColHeight = function() {
 	});
 };
 
+
+// DOCUMENT READY
 $(function() {
 	setTimeout(function() {
 		$('body').removeClass('loading');		
   }, 1000);
 	
+	// EQUALIZE COL HEIGHT
 	$('.row').equalizeColHeight();
 	
+	// ADD WAVE CARD X EFFECT INTO EACH CARD HEADER
 	$('.card').each(function() {
-		var fillHeightData = $(this).attr('data-fillheight');
-		if(typeof fillHeightData !== "undefined" && fillHeightData) $(this).height(	$(this).outerWidth()	);
-		
 		var $header = $(this).find('.card-header').eq(0);
 		if($header.length) new WaveCardX(	$header, '#5D7711', '#EE22BB', '#00AAFF'	);
 	});

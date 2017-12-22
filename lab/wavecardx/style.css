@@ -16,12 +16,13 @@
 	text-shadow: none;
 }
 html { overflow: hidden; width: 100%; height: 100%; font-size: 62.5%; }
+body { background-color: #fffeb3; width: 100%; height: 100%; overflow: auto; border: 1px solid red; }
 
 .pathway { font-family: 'Pathway Gothic One', sans-serif; }
 
 .wrapper {
 	width: 100%;
-	height: 100vh;
+	height: auto;
 	background-color: #fffeb3;
 	position: relative;
 	padding: 8px 12px;
@@ -133,13 +134,17 @@ html { overflow: hidden; width: 100%; height: 100%; font-size: 62.5%; }
 	width: 24px;
 	height: 24px;
 	background-color: #FFF;
+	color: #fb2e01;
 	text-align: center;
 	line-height: 24px;
-	font-size: 18px;
+	font-size: 12px;
 	border-radius: 50%;
 	margin: 6px;
 	position: relative;
+	transition: all 250ms ease-in-out;
 }
+.card .card-header .card-menu li:hover { color: #961b00; }
+.card .card-header .card-menu li a { color: inherit; text-decoration: none; outline: none; }
 
 .card .card-body {
 	position: relative;
@@ -150,6 +155,7 @@ html { overflow: hidden; width: 100%; height: 100%; font-size: 62.5%; }
 	background-color: #FFF;
 }
 .card .card-body .card-content { width: 100%; height: 100%; }
+.card .card-body .card-title { font-size: 1.8rem; font-weight: bold; }
 
 .card .card-footer {
 	position: relative;
@@ -159,6 +165,20 @@ html { overflow: hidden; width: 100%; height: 100%; font-size: 62.5%; }
 	min-height: 48px;
 	background-color: #FFF;
 }
+.card .card-footer .card-btn {
+	width: 100%;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	color: #222;
+	background-color: #6fcb9f;
+	box-shadow: 0 10px 10px -10px #222;
+	transition: all 250ms ease-in-out;
+	padding: 8px 12px;
+	text-decoration: none;
+	outline: none;
+}
+.card .card-footer .card-btn:hover { background-color: #63b68f; color: #222; }
 
 .card.card-1 .card-header { background-image: url(images/1.jpg); }
 .card.card-2 .card-header { background-image: url(images/2.jpg); }
@@ -228,7 +248,7 @@ html { overflow: hidden; width: 100%; height: 100%; font-size: 62.5%; }
 
 a.github {
 	display: block;
-	margin: 24px auto 0 auto;
+	margin: 0 auto;
 	max-width: 120px !important;
 	text-align: center;
 	text-decoration: none;
@@ -247,6 +267,61 @@ a.github strong {
 }
 a.github strong:hover { background-color: #63b68f; }
 
+.contact {
+	margin-top: 4vh;
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: #fb2e01;
+	padding: 2vh 2vw;
+	color: #ffe28a;
+	box-shadow: 0 10px 10px -10px #222;
+	z-index: 1;
+}
+.contact ul { padding: 0; margin: 0; list-style: none; }
+
+.code {
+	margin-top: 24px;
+	width: 100%;
+	height: 100%;
+}
+.code h3 {
+	font-weight: bold;
+	font-size: 3.6rem;
+	margin-bottom: 12px;
+}
+.code code {
+	width: 100%;
+	height: 100%;
+	display: block;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-family: 'Courier New',Courier,monospace;
+	overflow: auto;
+	padding: 8px 12px;
+	margin: 0;
+	background: #666547;
+	color: #FFF;
+	box-shadow: 0 2px 2px -2px #222;
+}
+.code code span {
+	display: block;
+	font-size: 12px;
+	position: relative;
+	min-height: 16px;
+}
+.code code span.ind-1 { padding-left: 2%; }
+.code code span.ind-2 { padding-left: 4%; }
+.code code span.ind-3 { padding-left: 6%; }
+.code code span.ind-4 { padding-left: 8%; }
+.code code span.ind-5 { padding-left: 10%; }
+.code code span.ind-6 { padding-left: 12%; }
+.code code span.ind-7 { padding-left: 14%; }
+.code code span.ind-8 { padding-left: 16%; }
+.code code span.ind-9 { padding-left: 18%; }
+.code code span.ind-10 { padding-left: 20%; }
+.code code span.ind-11 { padding-left: 22%; }
+.code code span.ind-12 { padding-left: 24%; }
 
 
 
