@@ -1,274 +1,203 @@
-var direction = 'DOWN';
-var tick = 0;
-var hash = null;
+var gameon = false;
+
 $(function() {
 	setTimeout(function() {
 		$('body').removeClass('loading');
-		$('#totalYears').html(	(new Date().getFullYear() - 2007)	);
-		$('#careerYears').html(	(new Date().getFullYear() - 2010)	);
-		$("#profile .profile-content").mCustomScrollbar({ theme : 'dark-thin', mouseWheel:{ scrollAmount: 200 }});
-		
-		initScrollEffect();
-		
-		hash = window.location.hash;
-		if($.trim(hash.replace('#','')) !== "") jumpTo(	hash.replace('#','')	);
   }, 1000);
 	
+	$('.frame').off('mouseenter').on('mouseenter',function() {
+		var $content = $(this).find('.frame-content').eq(0);
+		var src = $content.attr('data-src');
+		
+		$('.frame').css('opacity','1');
+		$('.preview').css({
+			'background-image' : 'none',
+			'box-shadow' : 'none'
+		}).removeClass('in');
+		
+		if(typeof src !== 'undefined' && !$('.greet-menu').hasClass('in') && !gameon) {
+			$('.frame').css('opacity','0.2');
+			$(this).css('opacity',1);
+			$('.preview').css({
+				'background-image' : 'url('+src+')',
+				'box-shadow' : '2px 2px 200px 2px #222 inset'
+			}).addClass('in');
+		}
+	}).off('mouseleave').on('mouseleave',function() {
+		$('.frame').css('opacity','1');
+		$('.preview').css({
+			'background-image' : 'none',
+			'box-shadow' : 'none'
+		}).removeClass('in');
+	}).off('click').on('click', function() {
+		var $content = $(this).find('.frame-content').eq(0);
+		var action = $content.attr('data-action');
+		if(typeof action !== 'undefined') openpage(action);
+	});
+	
+	$('.greet-menu').off('click').on('click',function() {
+		$(this).toggleClass('in');
+		$('.menu').toggleClass('in');
+	});
+	
+	var typed = {};
+			typed['right'] = new Typed('#greet_left', {
+				strings: ["Welcome to Xuxo", "I am Zul Zolkaffly"],
+				typeSpeed: 60,
+				loop: true
+			});
+			typed['left'] = new Typed('#greet_right', {
+				strings: ["Front End Web Developer.", "UI/UX Developer.", "PHP Programmer", "Cool Father"],
+				typeSpeed: 60,
+				loop: true
+			});
+			
+	$('.wrapper').on('scroll',debounce(bgLoad,250));
+	
+	bgLoad();
 });
 
-function toggleNav() {
-	$('#main_logo, #main_nav').toggleClass('in');
+function bgLoad() {
+	$('.frame').each(function() {
+		var vpBottom = Math.round($('.wrapper').scrollTop() + $('.wrapper').outerHeight() - ($(this).outerHeight()/2));
+		var frameTop = $(this).offset().top;
+		
+		if(frameTop <= vpBottom) {
+			var $content = $(this).find('.frame-content').eq(0);
+			var src = $content.attr('data-src');
+			
+			if(typeof src !== 'undefined' && !$('.greet-menu').hasClass('in') && !$content.hasClass('loaded')) {
+				var img = new Image();
+						img.onload = function() {
+							setTimeout(function() {
+								$content.css('background-image', 'url('+src+')');
+								$content.addClass('loaded');
+							}, 250);
+						}
+						img.src = src;
+				if (img.complete) img.onload();
+			}
+		}
+	});
 }
 
-function initScrollEffect() {		
-	
-	$('html').on('swipeup',function(e){ console.log('swipeup');
-		if(noScrollEffect(	$(e.target)	)) return false;
+function workBgLoad() {
+	$('.work').each(function() {
+		var vpBottom = Math.round($('.page-body').scrollTop() + $('.page-body').outerHeight());	// - ($(this).outerHeight()/2));
+		var frameTop = $(this).offset().top;
 		
-		var maxSwipe = 15;
-		tick = (tick >= maxSwipe) ? maxSwipe : (tick+3);
-		direction = 'DOWN';
-		animate();
+		if(frameTop <= vpBottom) {
+			var $wrapper = $(this).find('.work-wrapper').eq(0);
+			var src = $wrapper.attr('data-src');
+			
+			if(typeof src !== 'undefined' && !$('.greet-menu').hasClass('in') && !$wrapper.hasClass('loaded')) {
+				var img = new Image();
+						img.onload = function() {
+							setTimeout(function() {
+								$wrapper.css('background-image', 'url('+src+')');
+								$wrapper.addClass('loaded');
+							}, 250);
+						}
+						img.src = src;
+				if (img.complete) img.onload();
+			}
+		}
+	});
+}
+
+function openpage(action) {
+	if(gameon) return false;
+	
+	$('.frame').each(function() {
+		var $frame = $(this);
+		var timing = Math.floor(Math.random() * 3);
+		var direction = Math.floor(Math.random() * 2) + 1;
+		setTimeout(function() {
+			var angle = (direction == 2) ? -90 : 90;
+			$frame.css('transform', 'rotateY('+angle+'deg)');
+		}, (timing * 250));
 	});
 	
-	$('html').on('swipedown',function(e){
-		if(noScrollEffect(	$(e.target)	)) return false;
-		
-		var maxSwipe = 5;
-		tick = (tick <= 0) ? 0 : (tick-3);
-		tick = (tick <= 0) ? 0 : tick;
-		direction = 'UP';
-		animate();
-	});
+	var $page = $('.page').eq(0);
+	var title = { 'about' : 'About Me', 'work' : 'My Work', 'lab' : 'Experiment Lab', 'contact' : 'Contact Me' };
+	var url = 'pages/'+(action.toLowerCase())+'.html';
 	
-	$('html:not(.profile-content):not([class*="overlay"])').on('mousewheel', $.debounce(100,function(e) {
-		if(noScrollEffect(	$(e.target)	)) return false;
-		
-		var sbHeight = Math.round(	(window.innerHeight * (window.innerHeight / document.body.offsetHeight))	);
-		var totalHeight = Math.round(	($('#height_detect').position().top + $('#height_detect').outerHeight() - sbHeight)	);
-		var dX = e.deltaX, dY = e.deltaY, factor = e.deltaFactor;
-		var maxTick = (6 + (3*getMaxWorkRows()));	//Math.round(	(totalHeight / factor)	);
-		
-		if(dY < 0) tick = (tick >= maxTick) ? maxTick : (tick+1);
-		if(dY > 0) tick = (tick <= 0) ? 0 : (tick-1);
-		direction = (dY < 0) ? 'DOWN' : 'UP';
-		
-		animate();
-	}));
-}
-
-function noScrollEffect($t) {
-	if($t.hasClass('profile-content')) return true;
-	
-	if($t.parents('.profile-content').length) return true;
-	
-	if($t.is('[class*="overlay"]')) return true;
-	
-	if($t.parents('.overlay').length) return true;
-}
-
-function animate() {
-	//console.log(tick, direction);
-	
-	$('#scroller').css({ top: (3+(6*tick))+'vh' });
-	
-	if(tick%3==0) {
-		$('#scroller').addClass('spin');
-	} else {
-		$('#scroller').removeClass('spin');
-	}
-		
-	var r = getMaxWorkRows();
-	
-	if(tick > 3) {
-		$('.frame, #scroller').removeClass('black').addClass('white');
-		$('#main_logo').addClass('white');
-	} else {
-		$('.frame, #scroller').removeClass('white').addClass('black');
-		$('#main_logo').removeClass('white');
-	}
-	
-	if(tick <= 3) {			
-		var $tagline = $('#intro_tagline');				
-		var $spanElems = [ $('#intro_tagline span:nth-child(1)'), $('#intro_tagline span:nth-child(2)'), $('#intro_tagline span:nth-child(3)') ];
-		var spanProps = [{},{},{}];				
-		for(var i = 0; i < $spanElems.length; i++) {
-			var j = (i == 0) ? 72 : j*0.5;
-			var k = (i == 0) ? 144 : (k-72);
-			var b = Math.round(($tagline.outerHeight() - ((Math.round($spanElems[i].position().top*100)/100) + $spanElems[i].outerHeight()))*100)/100;
-					b = (direction == 'DOWN') ? (b+j) : ((tick == 0) ? k : (b-j));
-					
-			$spanElems[i].css('bottom',b+'px');
-		}
-	}
-	
-	if(tick <= (3 + (r*3)))	{
-		if(tick >= 3) {
-			$('.frame, #scroller').removeClass('black').addClass('white');
-			$('#main_logo').addClass('white');
-		} else {
-			$('.frame, #scroller').removeClass('white').addClass('black');
-			$('#main_logo').removeClass('white');
-		}
-		
-		var o = (tick >= 3) ? 1 : 0;		
-		
-		if(tick <= 3) {
-			$('.cell').each(function(i,e) {				
-				setTimeout(function() {
-					$(e).find('.cell-item.start').css({
-						opacity: o
-					});
-				},( ((i-1) + ((direction == 'DOWN') ? 0 : 8)) * 125 ));
+	$page.find('.page-title').eq(0).html(title[action.toLowerCase()]);
+	$page.find('.page-body').eq(0).load(url, function() {
+		if(action.toLowerCase() == 'about') {
+			var thisyear = new Date();
+			var birthdate = new Date(1988,12,06);
+			var careerstart = new Date(2010,09,01);
+			var ageYears = diff_years(thisyear, birthdate);
+			var careerYears = diff_years(thisyear, careerstart);
+			var totalYears = careerYears + 3;
+			
+			$('#ageYears').html(ageYears);
+			$('#totalYears').html(totalYears);
+			$('#careerYears').html(careerYears);
+			
+			$('#skills').skillx({
+				'maxPoints' : 5,
+				'showValueAs' : 'percentage',
+				'flatEdge' : true,
+				'items' : [
+					{ 'name' : 'PHP', 'value' : 4 },
+					{ 'name' : 'Java', 'value' : 2 },
+					{ 'name' : 'Dot Net', 'value' : 2 },
+					{ 'name' : 'HTML', 'value' : 5 },
+					{ 'name' : 'jQuery', 'value' : 5 },
+					{ 'name' : 'CSS', 'value' : 5 },
+					{ 'name' : 'Bootstrap', 'value' : 3 },
+					{ 'name' : 'SASS/LESS', 'value' : 1 },
+					{ 'name' : 'Angular', 'value' : 1 },
+					{ 'name' : 'React', 'value' : 1 },
+					{ 'name' : 'Xuxo', 'value' : 5 },
+					{ 'name' : 'Code Igniter', 'value' : 4 },
+					{ 'name' : 'Zend', 'value' : 3 },
+					{ 'name' : 'Wordpress', 'value' : 3 },
+					{ 'name' : 'Laravel', 'value' : 1 },
+					{ 'name' : 'Malay', 'value' : 5 },
+					{ 'name' : 'English', 'value' : 4 }
+				]
 			});
 		}
-	
-		var y = Math.floor(tick/3);
-		$('.cell').each(function(i,e) {		
-			var n = $(e).find('.cell-item.work').length;
-			if(n <= ((tick-3)/3)) return;
-					
-			setTimeout(function() {
-				$(e).find('.cell-item:not(.start,.end)').css({
-					top : (o*(-1*y*100))+'%',
-					opacity: o
-				});
-			},( ((i-1) + ((direction == 'DOWN') ? 8 : 0)) * 125 ));
-		});
 		
-		var eo = (tick >= (3+(r*3))) ? 1 : 0;
-		$('.cell').each(function(i,e) {		
-			var n = $(e).find('.cell-item.work').length;
-			setTimeout(function() {
-				$(e).find('.cell-item.end').css({
-					top : (eo*(-1*(n+1)*100))+'%',
-					opacity: eo
-				});
-			},( ((i-1) + ((direction == 'DOWN') ? 8 : 0)) * 125 ));
-		});
-	}
-	
-	if(tick >= (3 + (r*3)))	{		
-		if(tick == (3+(r*3))) turnProfileTo('front');
-		
-		if(tick >= (3 + (r*3))) {
-			$('.frame, #scroller').removeClass('white').addClass('black');
-			$('#main_logo').removeClass('white');
-		} else {
-			$('.frame, #scroller').removeClass('black').addClass('white');
-			$('#main_logo').addClass('white');
+		if(action.toLowerCase() == 'work' || action.toLowerCase() == 'lab') {
+			$('.page-body').off('scroll').on('scroll',debounce(workBgLoad,250));
+			workBgLoad();
 		}
 		
-		if(tick >= (3 + (r*3)) && tick < (6 + (r*3)))	{	
-			setTimeout(function() {
-				if(tick < (3 + (r*3))) {
-					$('#profile').css({
-						top: '100%'
-					});
-				} else {
-					$('#profile').css({
-						top: '0'
-					});
-				}
-			}, ((direction == 'DOWN') ? (250+(8*250)) :0));
+		if(action.toLowerCase() == 'contact') {
 		}
-		
-		if(tick == (6 + (r*3)))	{
-			turnProfileTo('front');
-			setTimeout(function() {
-				$('#profile').css({
-					top: '-100%'
-				});
-			}, ((direction == 'DOWN') ? (250+(8*250)) :0));
-		}
-	} else {
-		turnProfileTo('front');
-		$('#profile').css({
-			top: '100%'
-		});
-	}
-	
-	if(tick >= (6 + (r*3)))	{
-		$('.frame, #scroller').removeClass('black').addClass('white');
-		$('#main_logo').addClass('white');
-				
-		if(tick == (6 + (r*3)))	{			
-			setTimeout(function() {
-				if(tick < (6 + (r*3))) {
-					$('#contact').css({
-						top: '100%'
-					});
-				} else {
-					$('#contact').css({
-						top: '0%'
-					});
-				}
-			}, ((direction == 'DOWN') ? 500 :0));
-		}
-	} else {
-		//turnProfileTo('front');
-		$('#contact').css({
-			top: '100%'
-		});
-	}
-}
-
-function getMaxWorkRows() {
-	var m = 0;
-	$('.cell').each(function() {
-		var r = $(this).find('.cell-item.work').length;
-		
-		if(r > m) m = r;
 	});
-	return m;
+	
+	setTimeout(function() {
+		$page.addClass('in');
+	}, 1000);
+	
+	$('.wrapper').addClass('no-overflow');
+	$('.greet-menu, .menu').removeClass('in');
 }
 
-function turnProfileTo(face) {
-	$('#profile_wrapper').removeClass('front back left right top bottom');
-	$('#profile_wrapper').addClass(face);
-	$('.profile-content, [class*="profile-nav-"]').css('opacity',0);
-	$('#profile_'+face+' .profile-content, #profile_'+face+' [class*="profile-nav-"]').css('opacity',1);
+function closepage() {
+	$('.page, .greet-menu, .menu').removeClass('in');
+	$('.wrapper').removeClass('no-overflow');
+		
+	$('.frame').each(function() {
+		var $frame = $(this);
+		var timing = Math.floor(Math.random() * 3);
+		setTimeout(function() {
+			$frame.css('transform', 'rotateY(0deg)');
+		}, (timing * 250) + 500);
+	});
+	
+	setTimeout(function() {
+		$('.page .page-title').html('');
+		$('.page .page-body').html('');
+	}, 500);
 }
 
-function isMobile() { return $('#mobile_detect').is(':hidden'); }
-
-function jumpTo(id) {
-	if(typeof id === 'undefined' || id === null) {
-		return false;
-	} else {
-		
-		var $item = $('#'+id);
-		if (!$item.length) return false;
-		
-		var tickprop = {
-			'intro' : { 'start' : 0, 'end' : 3 },
-			'work' : { 'start' : 3, 'end' : (3 + (3*getMaxWorkRows())) },
-			'profile' : { 'start' : (3 + (3*getMaxWorkRows())), 'end' : (6 + (3*getMaxWorkRows())) },
-			'contact' : { 'start' : (6 + (3*getMaxWorkRows())), 'end' : (9 + (3*getMaxWorkRows())) }
-		}
-		
-		if(tick >= tickprop[id]['end']) {
-			for(var i = tick; i >= tickprop[id]['start']; i--) {
-				tick = i;
-				direction = 'UP';
-				animate();
-			}
-		} else if(tick <= tickprop[id]['start']) {
-			for(var i = tick; i <= tickprop[id]['start']; i++) {
-				tick = i;
-				direction = 'DOWN';
-				animate();
-			}
-		}
-		
-		$('#main_logo, #main_nav').removeClass('in');
-		
-		history.pushState({},'','#'+id);
-		return true;
-	}
-}
-
-function viewWork(project, title) {
+function viewwork(project, title) {
 	var content = 'projects/'+(project.toLowerCase())+'.html';
 
 	$('#overlay').find('.overlay-content').eq(0).load(content);
@@ -279,17 +208,37 @@ function viewWork(project, title) {
 		setTimeout(function() {
 			$('#overlay').find('.overlay-title').eq(0).html('');
 			$('#overlay').find('.overlay-content').eq(0).html('');
-			$('#overlay').find('.overlay-dialog').eq(0).mCustomScrollbar('destroy');
 		}, 250);
 	});
 
-	$('#overlay').find('.overlay-dialog').eq(0).mCustomScrollbar({ theme : 'dark-thin', mouseWheel:{ scrollAmount: 200 }});
 	setTimeout(function() {
 		$('#overlay').addClass('in');
 	}, 250);
 }
 
+function diff_years(dt2, dt1) {
+	//https://www.w3resource.com/javascript-exercises/javascript-date-exercise-49.php
+	var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+			diff /= (60 * 60 * 24);
+	return Math.abs(Math.round(diff/365.25));
+}
 
+function isMobile() { return $('#mobile_detect').is(':hidden'); }
+
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
 
 
 
