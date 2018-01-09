@@ -240,6 +240,13 @@ li[class*="theme-"] { padding-left: 12px; }
 .theme-oak { background-color: #4d4338; color: #FFF; }
 .theme-hazel { background-color: #e0d6bd; color: #4d4338; }
 .theme-forest { background-color: #3e6b19; color: #FFF; }
+.theme-golden { background-color: #eeba30; color: #FFF; }
+.theme-scarlet { background-color: #a32020; color: #FFF; }
+.theme-seafoam { background-color: #5f9ea0; color: #FFF; }
+.theme-blueberry { background-color: #708090; color: #FFF; }
+.theme-turquoise { background-color: #398564; color: #FFF; }
+.theme-lavender { background-color: #5e3c58; color: #FFF; }
+.theme-fire { background-color: #e8702a; color: #FFF; }
 
 /** CONTACT */
 

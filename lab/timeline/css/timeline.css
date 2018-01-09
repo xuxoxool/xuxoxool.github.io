@@ -30,7 +30,7 @@ DEALINGS IN THE SOFTWARE.
 .timeline.timeline-horizontal .timeline-wrapper {
 	position: relative;
 }
-.timeline.timeline-vertical:before {
+.timeline.timeline-vertical .timeline-wrapper:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -42,7 +42,7 @@ DEALINGS IN THE SOFTWARE.
 	opacity: 0.2;
 	transform: translateX(-50%);
 }
-.timeline.timeline-vertical.timeline-alternate:before { left: 50%; }
+.timeline.timeline-vertical.timeline-alternate .timeline-wrapper:before { left: 50%; }
 .timeline.timeline-vertical img { height: auto; width: 100%; }
 .timeline.timeline-vertical .timeline-item {
 	width: calc(100% - 40px);
@@ -294,3 +294,84 @@ DEALINGS IN THE SOFTWARE.
 .timeline.timeline-forest .timeline-item .timeline-time:before,
 .timeline.timeline-forest .timeline-item .timeline-title:before { background-color: #3e6b19; }
 .timeline.timeline-forest .timeline-item:hover .timeline-title:before { background-color: #305313; }
+
+.timeline.timeline-golden .timeline-item { border-top-color: #eeba30; }
+.timeline.timeline-golden .timeline-item:hover { border-top-color: #d3a625; }
+.timeline.timeline-golden .timeline-time { color: #eeba30; }
+.timeline.timeline-golden .timeline-item:hover .timeline-time { color: #d3a625; }
+.timeline.timeline-golden .timeline-item .timeline-time:before,
+.timeline.timeline-golden .timeline-item .timeline-title:before { background-color: #eeba30; }
+.timeline.timeline-golden .timeline-item:hover .timeline-title:before { background-color: #d3a625; }
+
+.timeline.timeline-scarlet .timeline-item { border-top-color: #a32020; }
+.timeline.timeline-scarlet .timeline-item:hover { border-top-color: #602320; }
+.timeline.timeline-scarlet .timeline-time { color: #a32020; }
+.timeline.timeline-scarlet .timeline-item:hover .timeline-time { color: #602320; }
+.timeline.timeline-scarlet .timeline-item .timeline-time:before,
+.timeline.timeline-scarlet .timeline-item .timeline-title:before { background-color: #a32020; }
+.timeline.timeline-scarlet .timeline-item:hover .timeline-title:before { background-color: #602320; }
+
+.timeline.timeline-seafoam .timeline-item { border-top-color: #5f9ea0; }
+.timeline.timeline-seafoam .timeline-item:hover { border-top-color: #4c7e80; }
+.timeline.timeline-seafoam .timeline-time { color: #5f9ea0; }
+.timeline.timeline-seafoam .timeline-item:hover .timeline-time { color: #4c7e80; }
+.timeline.timeline-seafoam .timeline-item .timeline-time:before,
+.timeline.timeline-seafoam .timeline-item .timeline-title:before { background-color: #5f9ea0; }
+.timeline.timeline-seafoam .timeline-item:hover .timeline-title:before { background-color: #4c7e80; }
+
+.timeline.timeline-blueberry .timeline-item { border-top-color: #708090; }
+.timeline.timeline-blueberry .timeline-item:hover { border-top-color: #536878; }
+.timeline.timeline-blueberry .timeline-time { color: #708090; }
+.timeline.timeline-blueberry .timeline-item:hover .timeline-time { color: #536878; }
+.timeline.timeline-blueberry .timeline-item .timeline-time:before,
+.timeline.timeline-blueberry .timeline-item .timeline-title:before { background-color: #708090; }
+.timeline.timeline-blueberry .timeline-item:hover .timeline-title:before { background-color: #536878; }
+
+.timeline.timeline-turquoise .timeline-item { border-top-color: #398564; }
+.timeline.timeline-turquoise .timeline-item:hover { border-top-color: #317256; }
+.timeline.timeline-turquoise .timeline-time { color: #398564; }
+.timeline.timeline-turquoise .timeline-item:hover .timeline-time { color: #317256; }
+.timeline.timeline-turquoise .timeline-item .timeline-time:before,
+.timeline.timeline-turquoise .timeline-item .timeline-title:before { background-color: #398564; }
+.timeline.timeline-turquoise .timeline-item:hover .timeline-title:before { background-color: #317256; }
+
+.timeline.timeline-lavender .timeline-item { border-top-color: #5e3c58; }
+.timeline.timeline-lavender .timeline-item:hover { border-top-color: #4b3046; }
+.timeline.timeline-lavender .timeline-time { color: #5e3c58; }
+.timeline.timeline-lavender .timeline-item:hover .timeline-time { color: #4b3046; }
+.timeline.timeline-lavender .timeline-item .timeline-time:before,
+.timeline.timeline-lavender .timeline-item .timeline-title:before { background-color: #5e3c58; }
+.timeline.timeline-lavender .timeline-item:hover .timeline-title:before { background-color: #4b3046; }
+
+.timeline.timeline-fire .timeline-item { border-top-color: #e8702a; }
+.timeline.timeline-fire .timeline-item:hover { border-top-color: #b95921; }
+.timeline.timeline-fire .timeline-time { color: #e8702a; }
+.timeline.timeline-fire .timeline-item:hover .timeline-time { color: #b95921; }
+.timeline.timeline-fire .timeline-item .timeline-time:before,
+.timeline.timeline-fire .timeline-item .timeline-title:before { background-color: #e8702a; }
+.timeline.timeline-fire .timeline-item:hover .timeline-title:before { background-color: #b95921; }
+
+
+.timeline.timeline-dark { background-color: #222; color: #FFF; }
+.timeline.timeline-dark .timeline-wrapper:before { background-color: #FFF; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
