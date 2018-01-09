@@ -555,6 +555,7 @@ strong { font-weight: bold; }
 
 /** GAME */
 #game_on_button {
+	display: none;
 	position: fixed;
 	top: 10px;
 	left: 10px;
