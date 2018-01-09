@@ -113,8 +113,9 @@ DEALINGS IN THE SOFTWARE.
 }
 
 @media (max-width: 767px) {
-	.timeline.timeline-vertical { padding: 0; }
-	.timeline.timeline-vertical:before { left: 10px !important; }
+	.timeline.timeline-vertical,
+	.timeline.timeline-vertical .timeline-wrapper { padding: 0; }
+	.timeline.timeline-vertical .timeline-wrapper:before { left: 10px !important; }
 	.timeline.timeline-vertical .timeline-item { margin-top: 40px !important; margin-left: 0 !important; float: none !important; width: 100% !important; }
 	.timeline.timeline-vertical .timeline-title { width: 100% !important; top: -24px !important; left: 8px !important; right: auto !important; text-align: left !important; }
 	.timeline.timeline-vertical .timeline-title:before { left: 0px !important; }
