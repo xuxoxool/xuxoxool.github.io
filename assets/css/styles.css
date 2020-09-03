@@ -1,0 +1,127 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("../webfonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+	font-family: "OpenSans";
+	src: url("../webfonts/OpenSans/OpenSans-Light.ttf");
+}
+
+html,
+body {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: #03396c;
+	color: #d3a625;
+	font-family: 'OpenSans', sans-serif;
+	font-weight: normal;
+}
+
+h1, h2 {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 10em;
+	line-height: 1;
+}
+
+@media (max-width: 767px) {
+	h1 {
+		font-size: 4em;
+	}
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 1em;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	color: #AAA;
+}
+
+li > span {
+	padding-left: 12px;
+}
+
+.wrapper {
+	width: 80vw;
+	height: 80vh;
+	margin: 10vh auto;
+	position: relative;
+	z-index: 1;
+}
+
+.wave {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	transform: translate3d(0, 0, 0);
+	opacity: 1;
+	transition: opacity 250ms ease-in-out;
+	z-index: 0 !important;
+}
+.wave span {
+	width: 200vw;
+	height: 200vh;
+	opacity: .1;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	background-color: #011f4b;
+	transform-origin: 50% 48%;
+	border-radius: 43%;
+	animation: wave-anim 3000ms infinite linear;
+	box-shadow: 10px 10px 100px 20px rgba(0,0,0,0.75) inset;
+	margin-left: -100vw;
+}
+.wave span:nth-child(2) { animation-duration: 5000ms; }
+.wave span:nth-child(3) { animation-duration: 7000ms; }
+
+@-webkit-keyframes wave-anim {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes wave-anim {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
